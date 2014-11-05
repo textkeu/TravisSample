@@ -1,5 +1,5 @@
 language: android
-install: ant installd
+install: ant debug install
 android:
   components:
     # Uncomment the lines below if you want to
