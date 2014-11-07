@@ -1,39 +1,14 @@
 language: android
 install: ant debug install
-android:
-  components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    - platform-tools
-    - tools
-
-    # The BuildTools version used by your project
-    - build-tools-21.0.0
-
-    # The SDK version used to compile your project
-    - android-19
-
-    # Additional components
-    - add-on
-    - extra
-
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-19
-
-  jdk:
-    # Check Travis JDKs http://docs.travis-ci.com/user/languages/java/#Testing-Against-Multiple-JDKs
-    # Test against one or more JDKs: 'jdk' is combined with 'env' to construct a build matrix.
-    # - openjdk7
-    - oraclejdk7
-
-
-# Emulator Management: Create, Start and Wait
-before_script:
-  - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
+env:
+  matrix:
+    - ANDROID_SDKS=android-19,sysimg-19  ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
+before_install:
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
+before_script:
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
-
 notifications:
   email: false
