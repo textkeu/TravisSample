@@ -10,6 +10,16 @@ before_script:
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
+
+deploy:
+  provider: releases
+  api-key: "1669e99bd8335639156bd7398c992e0d224d13ea"
+  file: "/home/travis/build/textkeu/TravisSample/bin/TravisSample-debug.apk"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true  
+  
 notifications:
   email: false
   slack: textkeu:7pO2Ny0GaIOAg1NRsKvWPf7K
