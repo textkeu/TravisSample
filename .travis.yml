@@ -12,3 +12,4 @@ before_script:
   - adb shell input keyevent 82 &
 notifications:
   email: false
+  slack: textkeu:7pO2Ny0GaIOAg1NRsKvWPf7K
