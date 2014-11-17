@@ -7,8 +7,8 @@ android:
 install:
   # check python version
   - python --version
-  - sudo apt-get install python-pip
-  - pip install --upgrade google-api-python-client
+  #- sudo apt-get install python-pip
+  - sudo pip install --upgrade google-api-python-client
 
 script:
   - ant debug
