@@ -9,6 +9,7 @@ install:
   - python --version
   #- sudo apt-get install python-pip
   - sudo pip install --upgrade google-api-python-client
+  - sudo pip install PyDrive
 
 script:
   - ant debug
@@ -19,7 +20,7 @@ after_success:
   # copy python file
   - cp /home/travis/build/textkeu/TravisSample/custom4travis/main.py main.py
   # call python file
-  - python sample.py
+  - python main.py
   
 notifications:
   email: false
