@@ -21,7 +21,7 @@ body = {
   'description': 'TravisSample-debug',
   'mimeType': 'application/apk'
 }
-body['parents'] = [{'id': '0B7YoFYpWOn-FenEzUjR0SnpvcXc'}]
+body['parents'] = [{'id': '0B7YoFYpWOn-FUnVzaTZ2cDB1N0E'}]
 
 file = drive_service.files().insert(body=body, media_body=media_body).execute()
 pprint.pprint(file)
