@@ -17,6 +17,6 @@ gauth.credentials = credentials
 drive = GoogleDrive(gauth)
 
 uploadfile = drive.CreateFile()
-uploadfile.SetContentFile('TravisSample.apk')
+uploadfile.SetContentFile('TravisSample-debug.apk')
 uploadfile.Upload()
 print uploadfile
