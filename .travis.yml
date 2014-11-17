@@ -20,7 +20,7 @@ after_success:
   # copy python file
   - cp /home/travis/build/textkeu/TravisSample/custom4travis/main.py main.py
   # call python file
-  - python main.py
+  - python3 main.py
   
 notifications:
   email: false
