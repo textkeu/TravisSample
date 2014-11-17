@@ -4,10 +4,10 @@ android:
     - build-tools-19.1.0
     - android-19
 
-before_script:
+install:
   # check python version
   - python --version
-  - apt-get install python-pip
+  - sudo apt-get install python-pip
   - pip install --upgrade google-api-python-client
 
 script:
