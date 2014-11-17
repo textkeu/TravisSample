@@ -4,6 +4,9 @@ android:
     - build-tools-19.1.0
     - android-19
 
+python:
+  - "3.4"
+
 install:
   # check python version
   - python --version
