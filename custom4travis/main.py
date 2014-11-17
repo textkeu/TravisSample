@@ -18,7 +18,7 @@ FILENAME = 'TravisSample-debug.apk'
 media_body = MediaFileUpload(FILENAME, mimetype='application/apk', resumable=True)
 body = {
   'title': 'TravisSample-debug.apk',
-  'description': 'TravisSample',
+  'description': 'TravisSample-debug',
   'mimeType': 'application/apk'
 }
 #body['parents'] = [{'id': '0B7YoFYpWOn-FenEzUjR0SnpvcXc'}]
