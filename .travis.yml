@@ -27,8 +27,7 @@ after_success:
 # blacklist
 branches:
   except:
-    - legacy
-    - experimental
+    - master
 
 notifications:
   email: false
