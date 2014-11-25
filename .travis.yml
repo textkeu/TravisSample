@@ -14,6 +14,7 @@ install:
   - sudo pip install PyDrive
 
 script:
+  - ${TRAVIS_PULL_REQUEST} = false
   - ant debug
 
 after_success:
