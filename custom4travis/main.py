@@ -1,7 +1,8 @@
 from apiclient.discovery import build
 from apiclient.http import MediaFileUpload
 from oauth2client.client import SignedJwtAssertionCredentials
-import base64, httplib2, pprint
+import base64, httplib2, pprint, subprocess, datetime
+from string import capwords
 
 # from google API console - convert private key to base64 or load from file
 id = "478917391271-e8pktjg0e8nbv2iev5vvbqo7i6jpiech@developer.gserviceaccount.com"
@@ -12,6 +13,15 @@ http = httplib2.Http()
 http = credentials.authorize(http)
 
 drive_service = build('drive', 'v2', http=http)
+
+COMMAND_GIT_LOG = 'git log -1 --pretty=%B'
+print COMMAND_GIT_LOG
+p = subprocess.Popen(COMMAND_GIT_LOG, stdout=subprocess.PIPE, shell=True)
+(output, err) = p.communicate()
+pprint.pprint(capwords(output.rstrip('\n')).replace(" ", ""));
+
+DATETIME = datetime.datetime.now().strftime("%Y%m%d%H%M")
+pprint.pprint(DATETIME);
 
 # Insert a file
 FILENAME = 'TravisSample-debug.apk'
