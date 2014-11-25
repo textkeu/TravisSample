@@ -14,7 +14,6 @@ install:
   - sudo pip install PyDrive
 
 script:
-  - ${TRAVIS_PULL_REQUEST} = false
   - ant debug
 
 after_success:
@@ -25,6 +24,12 @@ after_success:
   # call python file
   #- python main.py
   
+# blacklist
+branches:
+  except:
+    - legacy
+    - experimental
+
 notifications:
   email: false
   slack: textkeu:7pO2Ny0GaIOAg1NRsKvWPf7K
