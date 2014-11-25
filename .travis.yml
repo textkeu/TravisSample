@@ -18,11 +18,11 @@ script:
 
 after_success:
   # change directory to bin folder
-  - cd /home/travis/build/textkeu/TravisSample/bin/
+  #- cd /home/travis/build/textkeu/TravisSample/bin/
   # copy python file
-  - cp /home/travis/build/textkeu/TravisSample/custom4travis/main.py main.py
+  #- cp /home/travis/build/textkeu/TravisSample/custom4travis/main.py main.py
   # call python file
-  - python main.py
+  #- python main.py
   
 notifications:
   email: false
